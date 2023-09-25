@@ -1,0 +1,38 @@
+ALGORITHM algorithm_name
+VAR
+  SetOne : ARRAY_OF INTEGER[5];
+  SetTwo : ARRAY_OF INTEGER[5];
+  i,j,Sum: INTEGER;
+  PepeOzima : BOOLEAN;
+BEGIN
+    SetOne{4,8,9,5,6};
+    SetTwo{8,9,7,4,3};
+
+    Sum := 0;
+    PepeOzima := False; 
+
+
+    FOR i FROM 0 TO 4 STEP 1  DO
+        FOR j FROM 0 TO 4 STEP 2  DO
+            IF (SetOne[i]=SetTwo[j]) THEN
+               PepeOzima:=True;
+            END_IF
+        END_FOR
+        IF (PepeOzima = false) THEN
+            Sum := Sum + SetOne[i];
+        END_IF
+    END_FOR
+
+     FOR j FROM 0 TO 4 STEP 1  DO
+        FOR i FROM 0 TO 4 STEP 2  DO
+            IF (SetOne[i]=SetTwo[j]) THEN
+               PepeOzima:=True;
+            END_IF
+        END_FOR
+        IF (PepeOzima = false) THEN
+            Sum := Sum + SetTwo[j];
+        END_IF
+    END_FOR
+
+    Write ("The sum of Distincts Intergers is => ", Sum)
+END

@@ -1,0 +1,35 @@
+PROCEDURE dot_product(v1,v2:ARRAY_OF INTEGER, n:INTEGER)
+VAR
+    Sum,i,j:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+       Sum := v1[i] * v2[i];
+    END_FOR
+
+    IF (Sum = 0) THEN
+        Write("The vectors are orthogonal !")
+        else
+         Write("The vectors are not orthogonal !")
+    END_IF
+END
+
+ALGORITHM Dot product
+VAR
+
+   n:INTEGER;
+   v1: ARRAY_OF INTEGER[n];
+   v2 : ARRAY_OF INTEGER[n];
+   
+BEGIN
+     REPEAT
+        Write("Number of elements");
+        Read(n);
+    UNTIL (n>0)
+    
+    Write("write down the first vector please !");
+    Read (v1);
+    Write("write down the second vector please !");
+    Read (v2);
+
+    dot_product(v1,v2,n);
+END
