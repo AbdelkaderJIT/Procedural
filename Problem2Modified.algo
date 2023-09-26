@@ -3,38 +3,44 @@ VAR
     Sum,i,j:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1 STEP 1  DO
-       Sum := v1[i] * v2[i];
+       Aux := v1[i] * v2[i];
+       Sum:=Sum + Aux;
     END_FOR
 
-    IF (Sum = 0) THEN
-        return True;
-        else
-        return False;
-    END_IF
+   return Sum;
 END
 
 ALGORITHM Dot product
 VAR
 
-   n:INTEGER;
+   n,Sum:INTEGER;
    v1: ARRAY_OF INTEGER[n];
    v2 : ARRAY_OF INTEGER[n];
    
 BEGIN
 
+    Sum:=0;
     REPEAT
         Write("Number of elements");
         Read(n);
     UNTIL (n>0)
     
     Write("write down the first vector please !");
-    Read (v1);
-    Write("write down the second vector please !");
-    Read (v2);
+      FOR i FROM 1 TO n STEP 1  DO
+        Read (v1[i]);
+    END_FOR
 
-    IF (dot_product(v1,v2,n)) THEN
+      
+    Write("write down the second vector please !");
+     FOR i FROM 1 TO n STEP 1  DO
+        Read (v2[i]);
+    END_FOR
+
+    Sum := dot_product(v1,v2,n);
+
+    IF (Sum = 0) THEN
          Write("The vectors are orthogonal !")
-         else
+         ELSE
          Write("The vectors are not orthogonal !")
     END_IF
 
