@@ -1,6 +1,6 @@
-FUNCTION dot_product(v1,v2:ARRAY_OF INTEGER, n:INTEGER): BOOLEAN;
+FUNCTION dot_product(v1,v2:ARRAY_OF INTEGER, n:INTEGER): INTEGER;
 VAR
-    Sum,i,j:INTEGER;
+    Aux,Sum,i,j:INTEGER;
 BEGIN
     FOR i FROM 0 TO n-1 STEP 1  DO
        Aux := v1[i] * v2[i];
